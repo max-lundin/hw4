@@ -3,25 +3,29 @@
 <% if session[:user_id] %>
 
 <p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-secondary btn-lg btn-block" >New Post</a>
+  <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-secondary btn-lg btn-block">New Post</a>
 </p>
 
+<div class="container mt-4">
+  <div class="row">
+    <% @entries.each do |entry| %>
+      <div class="col-sm-12 col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= entry["title"] %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= entry["occurred_on"] %></h6>
+            <% if entry.uploaded_image.attached? %>
+              <%= image_tag entry.uploaded_image, class: "card-img-top img-fluid" %>
+            <% end %>
+            <p class="card-text"><%= entry["description"] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<% for entry in @entries %>
-  <h3><%= entry["title"] %></h3>
-  <h4><%= entry["occurred_on"] %></h4>
-  <p><%= entry["description"] %></p>
-  <% if entry.uploaded_image.attached? %>
-  <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
 <% else %>
-  <img src="<%= entry["image"] %>" class="img-fluid">
+  <p>Please log in to see your posts.</p>
+  <%= link_to 'Login', "/login" %>
 <% end %>
-<% end %>
-
-
-
-<% else %>
-<p>Please log in to see your posts.</p>
-<%= link_to 'Login', href="/login" %>
-<% end %>
-
