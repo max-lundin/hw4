@@ -1,7 +1,54 @@
-.navbar-custom {
-  background-color: #003366; /* Dark crisp blue */
+/* Main Background */
+body {
+  background-color: #f0f8ff; /* Very light tint of blue */
+  font-family: 'Arial', sans-serif;
 }
 
-.navbar-brand-custom {
-  color: #800000 !important; /* Dark maroon */
+/* Navbar */
+.navbar {
+  background-color: #ffffff; /* Making it even whiter could mean just keeping it as pure white */
+  border-bottom: 2px solid #004080; /* Dark blue line for separation */
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: #ff0000 !important; /* Red */
+  font-style: italic;
+  font-weight: bold; /* Making Spidergram brand name bold as well */
+}
+
+/* Posts Grid Boxes */
+.card {
+  background-color: #ffffff; /* White boxes */
+  color: #003366; /* Dark blue text */
+}
+
+.card-title, .card-text {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Buttons */
+.btn-primary, .btn-outline-primary {
+  background-color: #ff0000; /* Red */
+  border-color: #ff0000; /* Red */
+  color: #ffffff; /* White text */
+}
+
+.btn-primary:hover, .btn-outline-primary:hover {
+  background-color: #cc0000; /* Darker red on hover */
+  border-color: #cc0000;
+}
+
+/* Background with Vertical Striped Gradient */
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #303030 50%, #f2f2f2 50%);
+  background-size: 20px 20px; /* Adjusts the width of the stripes */
+  z-index: -1;
+  opacity: 0.1; /* Adjust opacity for subtlety */
 }
