@@ -1,5 +1,7 @@
 <h1><%= @place["name"] %></h1>
 
+<% if session[:user_id] %>
+
 <h2>My Entries</h2>
 <% for entry in @entries %>
   <h3><%= entry["title"] %></h3>
@@ -10,6 +12,11 @@
 <p>
   <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
 </p>
+
+<% else %>
+<p>Please log in to see your entries.</p>
+<%= link_to 'Login', href="/login" %>
+<% end %>
 
 <p>
   <a href="/places">Back to All Places</a>
