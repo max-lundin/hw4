@@ -1,13 +1,13 @@
 /* Main Background */
 body {
-  background-color: #f0f8ff; /* Very light tint of blue */
+  background-color: #f0f8ff;
   font-family: 'Arial', sans-serif;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #ffffff; /* Making it even whiter could mean just keeping it as pure white */
-  border-bottom: 2px solid #004080; /* Dark blue line for separation */
+  background-color: #ffffff; 
+  border-bottom: 4px solid #004080;
 }
 
 .navbar-brand, .navbar-nav .nav-link {
@@ -47,8 +47,26 @@ body:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to right, #303030 50%, #f2f2f2 50%);
+  background-image: linear-gradient(to right, #303030 75%, #f2f2f2 25%);
   background-size: 20px 20px; /* Adjusts the width of the stripes */
   z-index: -1;
   opacity: 0.1; /* Adjust opacity for subtlety */
+}
+
+
+/* Custom Login Link Styles */
+.login-link {
+  display: inline-block; /* Makes the element only as wide as its content */
+  color: #ff0000 !important; /* Change color as needed */
+  background-color: transparent !important; /* Keeps the background transparent */
+  border: none !important; /* Removes any border */
+  padding: 0.375rem 0.75rem; /* Adjusts padding to reduce size, customize as needed */
+  margin-right: 5px; /* Adds a small margin to the right */
+  font-weight: bold; /* Makes the text bold */
+  font-style: italic; /* Makes the text italic */
+}
+
+.login-link:hover, .login-link:focus {
+  color: #cc0000 !important; /* Darker color on hover/focus, adjust as needed */
+  text-decoration: underline; /* Adds underline on hover/focus for clarity */
 }

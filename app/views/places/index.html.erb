@@ -1,26 +1,20 @@
-
 <div class="container mt-5">
   <h1 class="mb-4">Places</h1>
-
-  
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-auto">
-    <a href="/places/new" class="btn btn-primary btn-lg me-2">New Place</a>
+  <div class="col-md-8">
+    <div class="mb-3">
+    <a href="/places/new" class="btn btn-primary btn-lg">New Place</a>
   </div>
-
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @places.each do |place| %>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <!-- Increased padding within the card for better spacing around the text -->
-            <h5 class="card-title p-2">
-              <a href="/places/<%= place["id"] %>" class="stretched-link"><%= place["name"] %></a>
-            </h5>
-          </div>
+  
+  <% for place in @places %>
+    <div class="mb-3">
+      <div class="card">
+        <div class="card-body">
+          <!-- Layout adjusted for a vertical list -->
+          <h5 class="card-title">
+            <a href="/places/<%= place["id"] %>" class="stretched-link"><%= place["name"] %></a>
+          </h5>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
