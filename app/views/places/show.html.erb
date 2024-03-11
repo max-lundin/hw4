@@ -2,22 +2,21 @@
 
 <% if session[:user_id] %>
 
-<h2>My Entries</h2>
+<p>
+  <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-secondary btn-lg btn-block" >New Post</a>
+</p>
+
+
 <% for entry in @entries %>
   <h3><%= entry["title"] %></h3>
   <h4><%= entry["occurred_on"] %></h4>
   <p><%= entry["description"] %></p>
 <% end %>
 
-<p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
-</p>
+
 
 <% else %>
 <p>Please log in to see your entries.</p>
 <%= link_to 'Login', href="/login" %>
 <% end %>
 
-<p>
-  <a href="/places">Back to All Places</a>
-</p>
